@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  sao:
+
+services:
+  yui:
+    image: yui:dev
+    volumes:
+      - ./config:/config
+      - /etc/ssl/certs:/etc/ssl/certs
+    restart: unless-stopped
+    networks:
+      - sao
